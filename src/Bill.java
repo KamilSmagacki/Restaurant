@@ -4,8 +4,10 @@ public class Bill {
         double kosztObslugi = PaymentService.obliczKosztObslugi(ostatecznaCena);
         double kosztDan = PaymentService.obliczKosztDan(ostatecznaCena, kosztObslugi);
 
-        System.out.println("Do zapłaty: " + ostatecznaCena + "zł" + "," + " w tym:");
-        System.out.println("Koszt dań: " + kosztDan);
-        System.out.println("Koszt Obługi: " + kosztObslugi);
+        if(ostatecznaCena > 0) {
+            System.out.println("Do zapłaty: " + ostatecznaCena + "zł" + "," + " w tym:");
+            System.out.println("Koszt dań: " + kosztDan);
+            System.out.println("Koszt Obługi: " + kosztObslugi);
+        }
     }
 }
