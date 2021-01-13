@@ -1,4 +1,3 @@
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class App {
@@ -9,8 +8,8 @@ public class App {
             Menu.wyswietlMenu();
             Option.chooseOption(sc, order);
             Bill.getBill(order);
-        } catch (InputMismatchException e) {
-            System.out.println("Mozna wpisac tylko cyfry!");
+        }catch (NumberFormatException e) {
+            System.out.println("Nie wpisuj głupot");
         }
     }
 }

@@ -2,14 +2,13 @@ import java.util.Scanner;
 
 public class Option {
     static void chooseOption(Scanner sc, Order order) {
-
-        System.out.println("Wpisz ile potraw chcesz zamówić:");
         Dish danie = new Dish();
         int numerDania;
-        int iloscPotraw = sc.nextInt();
-        for (int i = 1; i <= iloscPotraw; i++) {
-            System.out.println("Podaj numer " + i + " dania");
-            numerDania = sc.nextInt();
+        System.out.println("Zamów wybrane potrawy, wymieniając ich numery po przecinku: ");
+        String potrawy = sc.nextLine();
+        String[] iloscPotraw = potrawy.split(",");
+        for (String s : iloscPotraw) {
+            numerDania = Integer.parseInt(s);
             if (numerDania == 1) {
                 danie.cena = 24.99;
                 danie.id = 1;
